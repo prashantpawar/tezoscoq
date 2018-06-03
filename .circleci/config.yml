@@ -1,13 +1,11 @@
 version: 2
-dependencies:
-  cache_directories:
-    - opam-full-2.0.0-rc2
-  pre:
-    - sudo apt-get update; sudo apt-get install ocaml-nox
-    - bash ./.circleci/opam-install.sh
-    - sudo make install
 jobs:
   build:
+    dependencies:
+      pre:
+        - sudo apt-get update; sudo apt-get install ocaml-nox
+        - bash ./.circleci/opam-install.sh
+        - sudo make install
     docker:
       - image: debian:stretch
     steps:
