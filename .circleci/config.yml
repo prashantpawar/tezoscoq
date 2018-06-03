@@ -1,11 +1,12 @@
 version: 2
+dependencies:
+  pre:
+    - sudo apt-get update; sudo apt-get install ocaml-nox
+    - bash ./.circleci/opam-install.sh
+    - sudo make install
+    - echo "Done, TRACER"
 jobs:
   build:
-    dependencies:
-      pre:
-        - sudo apt-get update; sudo apt-get install ocaml-nox
-        - bash ./.circleci/opam-install.sh
-        - sudo make install
     docker:
       - image: debian:stretch
     steps:
