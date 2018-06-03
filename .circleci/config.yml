@@ -14,6 +14,9 @@ jobs:
     steps:
       - checkout
       - run:
+          name: Install prerequisites
+          command: sudo apt-get update; sudo apt-get install wget build-essentials ocaml-nox
+      - run:
           name: Install OPAM
           command: bash ./.circleci/opam-install.sh
       - run:
