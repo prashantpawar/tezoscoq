@@ -18,17 +18,20 @@ jobs:
       - save_cache:
           key: my-cache
           paths:
-            - findlib-1.8.0
-            - ocaml-4.06.0
+            - /root/project/findlib-1.8.0
+            - /root/project/ocaml-4.06.0
       - run:
           name: Install prerequisites
-          command: sudo apt-get update; sudo apt-get install build-essential
+          command: sudo apt-get update; sudo apt-get install build-essential opam
       - run:
           name: Install Ocaml
           command: bash ./.circleci/ocaml-install.sh
       - run:
           name: Install findlib
           command: bash ./.circleci/findlib-install.sh
+      - run:
+          name: Install OPAM-dep
+          command: opam install extlib re re.glob cmdliner cudf dose3.common dose3.algo opam-file-format mccs cppo
       - run:
           name: Install OPAM
           command: bash ./.circleci/opam-install.sh
