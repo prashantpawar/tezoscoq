@@ -20,6 +20,9 @@ jobs:
           name: Install Ocaml
           command: bash ./.circleci/ocaml-install.sh
       - run:
+          name: Install findlib
+          command: bash ./.circleci/findlib-install.sh
+      - run:
           name: Install OPAM
           command: bash ./.circleci/opam-install.sh
       - run:
