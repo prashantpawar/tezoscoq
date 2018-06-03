@@ -1,9 +1,11 @@
 version: 2
 dependencies:
   pre:
+    - echo "Starting, TRACER"
     - sudo apt-get update; sudo apt-get install ocaml-nox
     - bash ./.circleci/opam-install.sh
     - sudo make install
+  post:
     - echo "Done, TRACER"
 jobs:
   build:
