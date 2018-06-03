@@ -9,8 +9,6 @@ dependencies:
     - echo "Done, TRACER"
 jobs:
   build:
-    docker:
-      - image: debian:stretch
     steps:
       - checkout
       - run:
