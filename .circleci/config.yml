@@ -12,8 +12,8 @@ jobs:
     steps:
       - checkout
       - run:
-          name: Greeting
-          command: echo Hello, world.
+          name: Test OPAM
+          command: opam update
       - run:
           name: Print the Current Time
           command: date
