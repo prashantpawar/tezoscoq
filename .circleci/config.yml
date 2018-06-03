@@ -9,6 +9,8 @@ dependencies:
     - echo "Done, TRACER"
 jobs:
   build:
+    docker:
+      - image: ubuntu-14.04-XXL-1325-0ccc9ce
     steps:
       - checkout
       - run:
