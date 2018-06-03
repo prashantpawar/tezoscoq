@@ -22,7 +22,7 @@ jobs:
             - /root/project/ocaml-4.06.0
       - run:
           name: Install prerequisites
-          command: sudo apt-get update; sudo apt-get install -y software-properties-common && sudo add-apt-repository ppa:avsm/ppa && sudo apt-get update; sudo apt-get install -y build-essential ocaml ocaml-native-compilers camlp4-extra opam
+          command: sudo apt-get update; sudo apt-get install -y software-properties-common && sudo add-apt-repository -y ppa:avsm/ppa && sudo apt-get update; sudo apt-get install -y build-essential ocaml ocaml-native-compilers camlp4-extra opam
       - run:
           name: Test OPAM
           command: opam update
