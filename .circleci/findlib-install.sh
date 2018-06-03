@@ -1,6 +1,6 @@
 set -x
 set -e
-echo "Installing findlib`"
+echo "Installing findlib"
 if [ ! -e findlib-1.8.0 ]; then
   wget http://download.camlcity.org/download/findlib-1.8.0.tar.gz
   tar -zxvf findlib-1.8.0.tar.gz
